@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
+import store from './store';
+import { Provider } from 'react-redux';
 
 import Suscriptores from './components/suscriptores/Suscriptores';
 import MostrarSuscriptor from './components/suscriptores/MostrarSuscriptor';
@@ -10,6 +12,7 @@ import NavBar from './components/layout/NavBar';
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <NavBar/>
       <div className="container">
@@ -21,6 +24,7 @@ function App() {
       </Switch>
       </div>
     </Router>
+    </Provider>
   );
 }
 
